@@ -1,0 +1,151 @@
+{
+    "languageModel": {
+        "invocationName": "<Insert your Invocation Name here>",
+        "intents": [{
+                "name": "AMAZON.CancelIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.FallbackIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.NavigateHomeIntent",
+                "samples": []
+            },
+            {
+                "name": "ChaseTheStranger",
+                "samples": [
+                    "I chase the stranger",
+                    "I go after the blueskinned stranger",
+                    "I go after the blueskinned man",
+                    "I go after the blueskinned woman"
+                ],
+                "slots": []
+            },
+            {
+                "name": "GetMoney",
+                "samples": [
+                    "Show me the money",
+                    "Go get my money",
+                    "Find the cook",
+                    "Go with Jophur",
+                    "Get the money"
+                ],
+                "slots": []
+            },
+            {
+                "name": "GetOffTheShip",
+                "samples": [
+                    "Get off the ship",
+                    "Take the exit",
+                    "Scamper off",
+                    "Leave the ship"
+                ],
+                "slots": []
+            },
+            {
+                "name": "GrabTheSpice",
+                "samples": [
+                    "I grab a box of spice and run for it",
+                    "I grab a box of spice and run away",
+                    "Grab the spice",
+                    "Grab a box",
+                    "Take a box and run for it",
+                    "Grab a case of spice",
+                    "Take a case of spice"
+                ],
+                "slots": []
+            },
+            {
+                "name": "HelpCleanup",
+                "samples": [
+                    "I help gather the spice",
+                    "I help the pour soul crying over the mess",
+                    "Help clean up"
+                ],
+                "slots": []
+            },
+            {
+                "name": "SelectAGenre",
+                "samples": [
+                    "Tell me a {SelectedGenre} story",
+                    "Tell me a story about {SelectedGenre}",
+                    "{SelectedGenre}",
+                    "A {SelectedGenre} story"
+                ],
+                "slots": [{
+                    "name": "SelectedGenre",
+                    "type": "Genre",
+                    "samples": [
+                        "Tell me a {SelectedGenre} story",
+                        "Tell me a story about {SelectedGenre}",
+                        "{SelectedGenre}",
+                        "A {SelectedGenre} story"
+                    ]
+                }]
+            }
+        ],
+        "types": [{
+            "name": "Genre",
+            "values": [{
+                    "name": {
+                        "value": "Science Fiction",
+                        "synonyms": [
+                            "Space",
+                            "Future",
+                            "Futuristic",
+                            "Aliens",
+                            "Sci Fi"
+                        ]
+                    }
+                },
+                {
+                    "name": {
+                        "value": "Fantasy Fiction",
+                        "synonyms": [
+                            "Magic",
+                            "Medieval",
+                            "Monsters",
+                            "RPG"
+                        ]
+                    }
+                }
+            ]
+        }]
+    },
+    "dialog": {
+        "delegationStrategy": "SKILL_RESPONSE",
+        "intents": [{
+            "name": "SelectAGenre",
+            "delegationStrategy": "ALWAYS",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {},
+            "slots": [{
+                "name": "SelectedGenre",
+                "type": "Genre",
+                "confirmationRequired": false,
+                "elicitationRequired": true,
+                "prompts": {
+                    "elicitation": "Elicit.Slot.b7a96eda-c03f-495a-88ea-89633df3774d"
+                }
+            }]
+        }]
+    },
+    "prompts": [{
+        "id": "Elicit.Slot.b7a96eda-c03f-495a-88ea-89633df3774d",
+        "variations": [{
+            "type": "PlainText",
+            "value": "Please select a Genre, such as Science Fiction or Fantasy Fiction."
+        }]
+    }]
+}

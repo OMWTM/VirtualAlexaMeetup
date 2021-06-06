@@ -23,6 +23,12 @@ Fifth, we'll write the utterances that will trigger our intents.
 
 At the end of the hour, we will have created a basic skill.
 
+## Creating an Alexa Skill - Testing Your Skill
+
+Testing. The thing no one likes doing (except my friend Bill).
+Alexa provides several opportunities for testing.
+In this session, we'll look at what to test, how to test, and why to test. We'll test inside the Alexa Developer Console, and out. We'll also look at Botium Box and see how to automate your testing.
+
 ## Creating an Alexa Skill - Publishing Your Skill
 
 In this session, we will publish an Alexa skill. The demo will include configuring all the required features for publication, all the way through to submissing a new skill to the Alexa marketplace. Some time will be devoted to discussing some of the legal requirements, including Privacy policies.
